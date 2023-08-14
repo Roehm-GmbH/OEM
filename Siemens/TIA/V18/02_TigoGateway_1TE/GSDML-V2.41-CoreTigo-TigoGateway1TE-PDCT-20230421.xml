@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.41.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity DeviceID="0x5D9D" VendorID="0x03F3">
+      <InfoText TextId="DeviceDescription_InfoText"/>
+      <VendorName Value="CoreTigo Ltd"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="TigoGateway 1TE"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ModuleIdentNumber="0x00000001" MinDeviceInterval="32" CheckDeviceID_Allowed="true" DNS_CompatibleName="TigoMaster" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" FixedInSlots="0" ID="TigoMaster" ImplementationType="netX" LLDP_NoD_Supported="true" MultipleWriteSupported="true" NameOfStationNotTransferable="true" ObjectUUID_LocalIndex="1" PNIO_Version="V2.41" PhysicalSlots="0..1" PowerOnToCommReady="5000" PrmBeginPrmEndSequenceSupported="false" ResetToFactoryModes="2" SharedDeviceSupported="true" SharedInputSupported="false" IO_SupervisorSupported="true">
+          <ModuleInfo>
+            <Name TextId="TigoMaster"/>
+            <InfoText TextId="TigoMaster_DapInfoText"/>
+            <VendorName Value="CoreTigo Ltd"/>
+            <OrderNumber Value="CT271-0003t1-01"/>
+            <HardwareRelease Value="4"/>
+            <SoftwareRelease Value="V42.2.0"/>
+          </ModuleInfo>
+          <CertificationInfo ApplicationClass="" ConformanceClass="C" NetloadClass="III"/>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="X1"/>
+            <SubslotItem SubslotNumber="32769" TextId="X1P1"/>
+            <SubslotItem SubslotNumber="32770" TextId="X1P2"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="568" MaxOutputLength="552" MaxDataLength="1120"/>
+          <UseableModules>
+           <ModuleItemRef ModuleItemTarget="IOLM PDCT" FixedInSlots="1"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="TigoMaster DAP" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false">
+              <IOData/>
+              <ModuleInfo CategoryRef="DAP Module">
+                <Name TextId="TigoMaster"/>
+                <InfoText TextId="TigoMaster_IfInfoText"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem DelayMeasurementSupported="true" DCP_BoundarySupported="true" DCP_HelloSupported="true" ID="TigoMaster Interface" NetworkComponentDiagnosisSupported="true" PTP_BoundarySupported="true" SubmoduleIdentNumber="0x00000002" SubslotNumber="32768" SupportedProtocols="SNMP;LLDP" SupportedRT_Classes="RT_CLASS_1;RT_CLASS_3" TextId="PN-IO">
+              <RT_Class3Properties ForwardingMode="Relative" MaxBridgeDelay="5500" MaxNumberIR_FrameData="256" MaxRetentionTime="20000" StartupMode="Advanced;Legacy"/>
+              <SynchronisationMode MaxLocalJitter="50" SupportedRole="SyncSlave" SupportedSyncProtocols="PTCP" T_PLL_MAX="1000"/>
+              <ApplicationRelations NumberOfAR="2" StartupMode="Advanced;Legacy">
+                <TimingProperties ReductionRatio="1 2 4 8 16 32 64 128 256 512" SendClock="32 64 128"/>
+                <RT_Class3TimingProperties ReductionRatio="1 2 4 8 16" SendClock="32 64 128"/>
+              </ApplicationRelations>
+              <MediaRedundancy SupportedRole="Client"/>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem  CheckMAUTypeDifferenceSupported="true" CheckMAUTypeSupported="true" ID="TigoMaster Copper Port 1" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" SubmoduleIdentNumber="0x00000003" SubslotNumber="32769" TextId="Port1">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+            <PortSubmoduleItem  CheckMAUTypeDifferenceSupported="true" CheckMAUTypeSupported="true" ID="TigoMaster Copper Port 2" IsDefaultRingport="true" LinkStateDiagnosisCapability="Up+Down" MAUTypes="16" MaxPortRxDelay="340" MaxPortTxDelay="92" PortDeactivationSupported="true" SubmoduleIdentNumber="0x00000003" SubslotNumber="32770" TextId="Port2">
+              <MAUTypeList>
+                <MAUTypeItem Value="16" AdjustSupported="true"/>
+              </MAUTypeList>
+            </PortSubmoduleItem>
+          </SystemDefinedSubmoduleList>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="IOLM PDCT" ModuleIdentNumber="0x00000DA2" PhysicalSubslots="2..9">
+          <ModuleInfo >
+            <Name TextId="IOLM PDCT name"/>
+            <InfoText TextId="IOLM PDCT info" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="2" TextId="IDT_NAME_PORT1"/>
+            <SubslotItem SubslotNumber="3" TextId="IDT_NAME_PORT2"/>
+            <SubslotItem SubslotNumber="4" TextId="IDT_NAME_PORT3"/>
+            <SubslotItem SubslotNumber="5" TextId="IDT_NAME_PORT4"/>
+            <SubslotItem SubslotNumber="6" TextId="IDT_NAME_PORT5"/>
+            <SubslotItem SubslotNumber="7" TextId="IDT_NAME_PORT6"/>
+            <SubslotItem SubslotNumber="8" TextId="IDT_NAME_PORT7"/>
+            <SubslotItem SubslotNumber="9" TextId="IDT_NAME_PORT8"/>
+          </SubslotList>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem API="19969"  ID="IOLM PDCT submod" SubmoduleIdentNumber="0x00010000" FixedInSubslots="1" MayIssueProcessAlarm="false">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="Input_Data_2" Length="2" UseAsBits="true"/>
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="Output_Data_2" Length="2" UseAsBits="true"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="IOLM PDCT submod name"/>
+                <InfoText TextId="IOLM PDCT submod info" />
+              </ModuleInfo>
+             </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <UseableSubmodules>
+            <!-- ALL POSSIBLE SUBMODULES ARE LISTED HERE -->
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 32I/32O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 16I/16O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 8I/8O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 4I/4O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 2I/2O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 1I/1O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 32I" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 16I" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 8I" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 4I" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 2I" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 1I" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 32O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 16O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 8O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 4O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 2O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT 1O" AllowedInSubslots="2..9"/>
+            <SubmoduleItemRef SubmoduleItemTarget="IOLD PDCT Deactivated" AllowedInSubslots="2..9" UsedInSubslots="2..9"/>
+          </UseableSubmodules>
+        </ModuleItem>
+      </ModuleList>
+
+      <SubmoduleList>
+
+        <!-- IO-Link wireless device proxy deactivated -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT Deactivated" SubmoduleIdentNumber="0x60000001" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="false" IM5_Supported="false">
+          <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01,0x00,0x11,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT DEACTIVATED name"/>
+            <InfoText TextId="IOLD PDCT DEACTIVATED info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 32I/ 32O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 32I/32O" SubmoduleIdentNumber="0x60002021" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_32" Length="32" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_32" Length="32" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x21,0x20"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 32I/32O name"/>
+            <InfoText TextId="IOLD PDCT 32I/32O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 16I/ 16O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 16I/16O" SubmoduleIdentNumber="0x60001011" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_16" Length="16" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_16" Length="16" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x11,0x10"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 16I/16O name"/>
+            <InfoText TextId="IOLD PDCT 16I/16O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 8I/ 8O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 8I/8O" SubmoduleIdentNumber="0x60000809" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_8" Length="8" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_8" Length="8" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x09,0x08"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 8I/8O name"/>
+            <InfoText TextId="IOLD PDCT 8I/8O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 4I/ 4O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 4I/4O" SubmoduleIdentNumber="0x60000405" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_4" Length="4" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_4" Length="4" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x05,0x04"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 4I/4O name"/>
+            <InfoText TextId="IOLD PDCT 4I/4O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 2I/ 2O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 2I/2O" SubmoduleIdentNumber="0x60000203" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_2" Length="2" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_2" Length="2" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x03,0x02"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 2I/2O name"/>
+            <InfoText TextId="IOLD PDCT 2I/2O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 1I/ 1O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 1I/1O" SubmoduleIdentNumber="0x60000102" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_1" Length="1" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_1" Length="1" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x02,0x01"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 1I/1O name"/>
+            <InfoText TextId="IOLD PDCT 1I/1O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 32I (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 32I" SubmoduleIdentNumber="0x60000021" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_32" Length="32" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x21,0x00"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 32I name"/>
+            <InfoText TextId="IOLD PDCT 32I info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 16I (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 16I" SubmoduleIdentNumber="0x60000011" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_16" Length="16" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x11,0x00"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 16I name"/>
+            <InfoText TextId="IOLD PDCT 16I info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 8I (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 8I" SubmoduleIdentNumber="0x60000009" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_8" Length="8" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x09,0x00"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 8I name"/>
+            <InfoText TextId="IOLD PDCT 8I info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 4I (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 4I" SubmoduleIdentNumber="0x60000005" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_4" Length="4" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x05,0x00"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 4I name"/>
+            <InfoText TextId="IOLD PDCT 4I info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 2I (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 2I" SubmoduleIdentNumber="0x60000003" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_2" Length="2" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x03,0x00"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 2I name"/>
+            <InfoText TextId="IOLD PDCT 2I info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 1I (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 1I" SubmoduleIdentNumber="0x60000002" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Input_Data_1" Length="1" UseAsBits="false"/>
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x02,0x00"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 1I name"/>
+            <InfoText TextId="IOLD PDCT 1I info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 32O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 32O" SubmoduleIdentNumber="0x60002001" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_32" Length="32" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x01,0x20"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 32O name"/>
+            <InfoText TextId="IOLD PDCT 32O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 16O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 16O" SubmoduleIdentNumber="0x60001001" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_16" Length="16" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x01,0x10"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 16O name"/>
+            <InfoText TextId="IOLD PDCT 16O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 8O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 8O" SubmoduleIdentNumber="0x60000801" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_8" Length="8" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x01,0x08"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 8O name"/>
+            <InfoText TextId="IOLD PDCT 8O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 4O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 4O" SubmoduleIdentNumber="0x60000401" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_4" Length="4" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x01,0x04"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 4O name"/>
+            <InfoText TextId="IOLD PDCT 4O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 2O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 2O" SubmoduleIdentNumber="0x60000201" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_2" Length="2" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x01,0x02"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 2O name"/>
+            <InfoText TextId="IOLD PDCT 2O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+        <!-- IO-Link wireless device proxy 1O (PDCT) -->
+        <SubmoduleItem API="19969" ID="IOLD PDCT 1O" SubmoduleIdentNumber="0x60000101" RequiredSchemaVersion="V2.41" MayIssueProcessAlarm="true" IM5_Supported="true">
+           <IOData>
+            <Input Consistency="All items consistency">
+              <DataItem DataType="Unsigned8" UseAsBits="true" TextId="PQI">
+                <BitDataItem BitOffset="2" TextId="NP"/>
+                <BitDataItem BitOffset="3" TextId="SV"/>
+                <BitDataItem BitOffset="4" TextId="DA"/>
+                <BitDataItem BitOffset="5" TextId="DC"/>
+                <BitDataItem BitOffset="6" TextId="DE"/>
+                <BitDataItem BitOffset="7" TextId="PQ"/>
+              </DataItem>
+            </Input>
+            <Output Consistency="All items consistency">
+              <DataItem DataType="OctetString" TextId="Output_Data_1" Length="1" UseAsBits="false"/>
+            </Output>
+          </IOData>
+          <RecordDataList>
+           <!-- Profile Index=0xB900 (47360)-->
+            <ParameterRecordDataItem Index="47360" Length="34" TransferSequence="0">
+              <Name TextId="Port parameters"/>
+              <Const ByteOffset="0" Data="0x80,0x01"/>
+              <!-- Profinet specific part -->
+              <Const ByteOffset="4" Data="0x01,0x01"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="0" DefaultValue="1" Changeable="true" Visible="true" TextId="Diagnostic"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="1" DefaultValue="1" Changeable="true" Visible="true" TextId="Notification"/>
+              <Ref ValueItemTarget="Config_Source" DataType="Bit" ByteOffset="3" BitOffset="2" DefaultValue="0" Changeable="false" Visible="false" TextId="ConfigSource"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="3" DefaultValue="0" Changeable="true" Visible="true" TextId="InputFraction"/>
+              <Ref ValueItemTarget="Enable_Disable" DataType="Bit" ByteOffset="3" BitOffset="4" DefaultValue="1" Changeable="true" Visible="true" TextId="PullPlug"/>
+            </ParameterRecordDataItem>
+          </RecordDataList>
+          <ModuleInfo CategoryRef="Generic">
+            <Name TextId="IOLD PDCT 1O name"/>
+            <InfoText TextId="IOLD PDCT 1O info"/>
+          </ModuleInfo>
+        </SubmoduleItem>
+
+      </SubmoduleList>
+
+      <ValueList>
+        <ValueItem ID="Enable_Disable">
+          <Assignments>
+            <Assign Content="0" TextId="Disable"/>
+            <Assign Content="1" TextId="Enable"/>
+          </Assignments>
+        </ValueItem>
+
+        <ValueItem ID="Config_Source">
+          <Assignments>
+            <Assign Content="0" TextId="ConfigSource_PDCT"/>
+            <Assign Content="1" TextId="ConfigSource_PNIO"/>
+          </Assignments>
+        </ValueItem>
+
+      </ValueList>
+
+      <ChannelDiagList>
+        <!-- IO-Link profile diagnosis -->
+        <ProfileChannelDiagItem API="19969" ErrorType="38144"> <!-- 0x9500 (IO-Link Device diagnosis codes 0x0000 - 0x7FFF) -->
+          <Name TextId="Device_Diag"/>
+          <ExtChannelDiagList>
+            <ExtChannelDiagItem ErrorType="4096"> <!-- 0x1000 -->
+              <Name TextId="Device_Diag_General_Malfunction_Name"/>
+              <Help TextId="Device_Diag_General_Malfunction_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="16384"> <!-- 0x4000 -->
+              <Name TextId="Device_Diag_Temperature_Fault_Name"/>
+              <Help TextId="Device_Diag_Temperature_Fault_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="16912"> <!-- 0x4210 -->
+              <Name TextId="Device_Diag_Temperature_Overrun_Name"/>
+              <Help TextId="Device_Diag_Temperature_Overrun_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="16928"> <!-- 0x4220 -->
+              <Name TextId="Device_Diag_Temperature_Underrun_Name"/>
+              <Help TextId="Device_Diag_Temperature_Underrun_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20480"> <!-- 0x5000 -->
+              <Name TextId="Device_Diag_Device_Hw_Fault_Name"/>
+              <Help TextId="Device_Diag_Device_Hw_Fault_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20496"> <!-- 0x5010 -->
+              <Name TextId="Device_Diag_Component_Malfunction_Name"/>
+              <Help TextId="Device_Diag_Component_Malfunction_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20497"> <!-- 0x5011 -->
+              <Name TextId="Device_Diag_Non_Volatile_Memory_Loss_Name"/>
+              <Help TextId="Device_Diag_Non_Volatile_Memory_Loss_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20498"> <!-- 0x5012 -->
+              <Name TextId="Device_Diag_Batteries_Low_Name"/>
+              <Help TextId="Device_Diag_Batteries_Low_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20736"> <!-- 0x5100 -->
+              <Name TextId="Device_Diag_General_Power_Supply_Fault_Name"/>
+              <Help TextId="Device_Diag_General_Power_Supply_Fault_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20737"> <!-- 0x5101 -->
+              <Name TextId="Device_Diag_Fuse_Blown_Name"/>
+              <Help TextId="Device_Diag_Fuse_Blown_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20752"> <!-- 0x5110 -->
+              <Name TextId="Device_Diag_Primary_Supply_Voltage_Overrun_Name"/>
+              <Help TextId="Device_Diag_Primary_Supply_Voltage_Overrun_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20753"> <!-- 0x5111 -->
+              <Name TextId="Device_Diag_Primary_Supply_Voltage_Underrun_Name"/>
+              <Help TextId="Device_Diag_Primary_Supply_Voltage_Underrun_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="20754"> <!-- 0x5112 -->
+              <Name TextId="Device_Diag_Secondary_Supply_Voltage_Fault_Name"/>
+              <Help TextId="Device_Diag_Secondary_Supply_Voltage_Fault_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="24576"> <!-- 0x6000 -->
+              <Name TextId="Device_Diag_Device_Sw_Fault_Name"/>
+              <Help TextId="Device_Diag_Device_Sw_Fault_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="25376"> <!-- 0x6320 -->
+              <Name TextId="Device_Diag_Parameter_Error_Name"/>
+              <Help TextId="Device_Diag_Parameter_Error_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="25377"> <!-- 0x6321 -->
+              <Name TextId="Device_Diag_Parameter_Missing_Name"/>
+              <Help TextId="Device_Diag_Parameter_Missing_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30464"> <!-- 0x7700 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30465"> <!-- 0x7701 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_1_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30466"> <!-- 0x7702 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_2_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30467"> <!-- 0x7703 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_3_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30468"> <!-- 0x7704 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_4_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30469"> <!-- 0x7705 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_5_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30470"> <!-- 0x7706 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_6_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30471"> <!-- 0x7707 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_7_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30472"> <!-- 0x7708 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_8_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30473"> <!-- 0x7709 -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_9_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30474"> <!-- 0x770A -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_10_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30475"> <!-- 0x770B -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_11_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30476"> <!-- 0x770C -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_12_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30477"> <!-- 0x770D -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_13_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30478"> <!-- 0x770E -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_14_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30479"> <!-- 0x770F -->
+              <Name TextId="Device_Diag_Wire_Break_Subordinate_Device_15_Name"/>
+              <Help TextId="Device_Diag_Wire_Break_Subordinate_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30480"> <!-- 0x7710 -->
+              <Name TextId="Device_Diag_Short_Circuit_Name"/>
+              <Help TextId="Device_Diag_Short_Circuit_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="30481"> <!-- 0x7711 -->
+              <Name TextId="Device_Diag_Ground_Fault_Name"/>
+              <Help TextId="Device_Diag_Ground_Fault_Help"/>
+            </ExtChannelDiagItem>
+          </ExtChannelDiagList>
+        </ProfileChannelDiagItem>
+
+        <ProfileChannelDiagItem API="19969" ErrorType="38145"> <!-- 0x9501 (IO-Link Device diagnosis codes 0x8000 - 0xFFFF) -->
+          <Name TextId="Device_Diag"/>
+          <ExtChannelDiagList>
+            <ExtChannelDiagItem ErrorType="3072"> <!-- 0x8C00 -->
+              <Name TextId="Device_Diag_Technology_Specific_Application_Fault_Name"/>
+              <Help TextId="Device_Diag_Technology_Specific_Application_Fault_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3073"> <!-- 0x8C01 -->
+              <Name TextId="Device_Diag_Simulation_Active_Name"/>
+              <Help TextId="Device_Diag_Simulation_Active_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3088"> <!-- 0x8C10 -->
+              <Name TextId="Device_Diag_Process_Variable_Range_Overrun_Name"/>
+              <Help TextId="Device_Diag_Process_Variable_Range_Overrun_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3104"> <!-- 0x8C20 -->
+              <Name TextId="Device_Diag_Measurement_Range_Exceeded_Name"/>
+              <Help TextId="Device_Diag_Measurement_Range_Exceeded_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3120"> <!-- 0x8C30 -->
+              <Name TextId="Device_Diag_Process_Variable_Range_Underrun_Name"/>
+              <Help TextId="Device_Diag_Process_Variable_Range_Underrun_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3136"> <!-- 0x8C40 -->
+              <Name TextId="Device_Diag_Maintenance_Required_Name"/>
+              <Help TextId="Device_Diag_Maintenance_Required_Cleaning_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3137"> <!-- 0x8C41 -->
+              <Name TextId="Device_Diag_Maintenance_Required_Name"/>
+              <Help TextId="Device_Diag_Maintenance_Required_Refill_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="3138"> <!-- 0x8C42 -->
+              <Name TextId="Device_Diag_Maintenance_Required_Name"/>
+              <Help TextId="Device_Diag_Maintenance_Required_Exchange_Parts_Help"/>
+            </ExtChannelDiagItem>
+          </ExtChannelDiagList>
+        </ProfileChannelDiagItem>
+
+        <ProfileChannelDiagItem API="19969" ErrorType="38146"> <!-- 0x9502 (IO-Link Master/Port diagnosis codes 0x0000 - 0x7FFF)-->
+          <Name TextId="Master_Diag"/>
+          <ExtChannelDiagList>
+            <ExtChannelDiagItem ErrorType="6143"> <!-- 0x17FF -->
+              <Name TextId="Master_Diag_IO_Mismatch_Name"/>
+              <Help TextId="Master_Diag_IO_Mismatch_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6144"> <!-- 0x1800 -->
+              <Name TextId="Master_Diag_No_Device_Name"/>
+              <Help TextId="Master_Diag_No_Device_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6145"> <!-- 0x1801 -->
+              <Name TextId="Master_Diag_Startup_Param_Name"/>
+              <Help TextId="Master_Diag_Startup_Param_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6146"> <!-- 0x1802 -->
+              <Name TextId="Master_Diag_VendorID_Mismatch_Name"/>
+              <Help TextId="Master_Diag_VendorID_Mismatch_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6147"> <!-- 0x1803 -->
+              <Name TextId="Master_Diag_DeviceID_Mismatch_Name"/>
+              <Help TextId="Master_Diag_DeviceID_Mismatch_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6152"> <!-- 0x1808 -->
+              <Name TextId="Master_Diag_EventOverflow_Name"/>
+              <Help TextId="Master_Diag_EventOverflow_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6153"> <!-- 0x1809 -->
+              <Name TextId="Master_Diag_DS_Memory_Name"/>
+              <Help TextId="Master_Diag_DS_Memory_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6154"> <!-- 0x180A -->
+              <Name TextId="Master_Diag_DS_Identity_Name"/>
+              <Help TextId="Master_Diag_DS_Identity_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6155"> <!-- 0x180B -->
+              <Name TextId="Master_Diag_DS_Unspecific_Name"/>
+              <Help TextId="Master_Diag_DS_Unspecific_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6156"> <!-- 0x180C -->
+              <Name TextId="Master_Diag_DS_Upload_Name"/>
+              <Help TextId="Master_Diag_DS_Upload_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="6157"> <!-- 0x180D -->
+              <Name TextId="Master_Diag_DS_Download_Name"/>
+              <Help TextId="Master_Diag_DS_Download_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="24576"> <!-- 0x6000 -->
+              <Name TextId="Master_Diag_CycleTime_Name"/>
+              <Help TextId="Master_Diag_CycleTime_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="24577"> <!-- 0x6001 -->
+              <Name TextId="Master_Diag_Revision_Name"/>
+              <Help TextId="Master_Diag_Revision_Help"/>
+            </ExtChannelDiagItem>
+            <ExtChannelDiagItem ErrorType="24578"> <!-- 0x6002 -->
+              <Name TextId="Master_Diag_ISDU_Name"/>
+              <Help TextId="Master_Diag_ISDU_Help"/>
+            </ExtChannelDiagItem>
+          </ExtChannelDiagList>
+        </ProfileChannelDiagItem>
+      </ChannelDiagList>
+      <CategoryList>
+        <CategoryItem ID="DAP Module" TextId="DAP Module_CategoryName"/>
+        <CategoryItem ID="Generic" TextId="Generic IOL"/>
+      </CategoryList>
+
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <Text TextId="DeviceDescription_InfoText" Value="Gateway PROFINET IO-Device to 8-Port One-Track IO-Link Wireless Master (PDCT)"/>
+
+          <Text TextId="TigoMaster" Value="TigoGateway 1TE-PNT"/>
+          <Text TextId="TigoMaster_DapInfoText" Value="Supports FastStartup, Identification &amp; Maintenance 1-3 and 5 (IOLD submodules), Shared Device, RT and IRT Communication down to 1ms Sendclock, Advanced startup."/>
+          <Text TextId="TigoMaster_IfInfoText" Value="PROFINET IO-Device to 8-Port One-Track IO-Link Wireless Master gateway (PDCT). Minimum Device Interval is 1ms and supports Netload Class III."/>
+
+          <Text TextId="PN-IO" Value="PROFINET interface"/>
+          <Text TextId="Port1" Value="X31"/>
+          <Text TextId="Port2" Value="X32"/>
+
+          <Text TextId="X1" Value="X1"/>
+          <Text TextId="X1P1" Value="X1 P1"/>
+          <Text TextId="X1P2" Value="X1 P2"/>
+
+          <!-- Port names -->
+          <Text TextId="IDT_NAME_PORT1" Value="WP01"/>
+          <Text TextId="IDT_NAME_PORT2" Value="WP02"/>
+          <Text TextId="IDT_NAME_PORT3" Value="WP03"/>
+          <Text TextId="IDT_NAME_PORT4" Value="WP04"/>
+          <Text TextId="IDT_NAME_PORT5" Value="WP05"/>
+          <Text TextId="IDT_NAME_PORT6" Value="WP06"/>
+          <Text TextId="IDT_NAME_PORT7" Value="WP07"/>
+          <Text TextId="IDT_NAME_PORT8" Value="WP08"/>
+
+          <!-- Module category names -->
+          <Text TextId="DAP Module_CategoryName" Value="Device Access Point Modules"/>
+          <Text TextId="Generic IOL" Value="IOL wireless generic devices"/>
+
+          <!-- *********************************************************************************** -->
+          <!--                               Generic modules                                       -->
+          <!-- *********************************************************************************** -->
+          <!-- Generic IOLM modules and submodules info  -->
+          <Text TextId="IOLM PDCT name" Value="16-Port IO-Link Wireless Master (PDCT)"/>
+          <Text TextId="IOLM PDCT info" Value="IO-Link Wireless Master without configuration. Use a PDCT tool to adjust the master settings"/>
+          <Text TextId="IOLM PDCT submod name" Value="IO-Link Wireless Master (PDCT)"/>
+          <Text TextId="IOLM PDCT submod info" Value="IO-Link Wireless Master without configuration. Use a PDCT tool to adjust the master settings"/>
+
+          <!-- Generic IOLD modules and submodules info  -->
+          <Text TextId="IOLD PDCT DEACTIVATED name" Value="Deactivated"/>
+          <Text TextId="IOLD PDCT DEACTIVATED info" Value="Port is deactivated"/>
+          <Text TextId="IOLD PDCT 32I/32O name" Value="IO-Link Wireless Device 32 I/ 32 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 32I/32O info" Value="IO-Link Wireless Device with 32 I/ 32 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 16I/16O name" Value="IO-Link Wireless Device 16 I/ 16 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 16I/16O info" Value="IO-Link Wireless Device with 16 I/ 16 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 8I/8O name" Value="IO-Link Wireless Device 8 I/ 8 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 8I/8O info" Value="IO-Link Wireless Device with 8 I/ 8 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 4I/4O name" Value="IO-Link Wireless Device 4 I/ 4 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 4I/4O info" Value="IO-Link Wireless Device with 4 I/ 4 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 2I/2O name" Value="IO-Link Wireless Device 2 I/ 2 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 2I/2O info" Value="IO-Link Wireless Device with 2 I/ 2 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 1I/1O name" Value="IO-Link Wireless Device 1 I/ 1 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 1I/1O info" Value="IO-Link Wireless Device with 1 I/ 1 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 32I name" Value="IO-Link Wireless Device 32 I + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 32I info" Value="IO-Link Wireless Device with 32 I + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 16I name" Value="IO-Link Wireless Device 16 I + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 16I info" Value="IO-Link Wireless Device with 16 I + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 8I name" Value="IO-Link Wireless Device 8 I + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 8I info" Value="IO-Link Wireless Device with 8 I + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 4I name" Value="IO-Link Wireless Device 4 I + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 4I info" Value="IO-Link Wireless Device with 4 I + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 2I name" Value="IO-Link Wireless Device 2 I + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 2I info" Value="IO-Link Wireless Device with 2 I + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 1I name" Value="IO-Link Wireless Device 1 I + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 1I info" Value="IO-Link Wireless Device with 1 I + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 32O name" Value="IO-Link Wireless Device 32 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 32O info" Value="IO-Link Wireless Device with 32 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 16O name" Value="IO-Link Wireless Device 16 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 16O info" Value="IO-Link Wireless Device with 16 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 8O name" Value="IO-Link Wireless Device 8 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 8O info" Value="IO-Link Wireless Device with 8 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 4O name" Value="IO-Link Wireless Device 4 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 4O info" Value="IO-Link Wireless Device with 4 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 2O name" Value="IO-Link Wireless Device 2 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 2O info" Value="IO-Link Wireless Device with 2 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+          <Text TextId="IOLD PDCT 1O name" Value="IO-Link Wireless Device 1 O + PQI (PDCT)"/>
+          <Text TextId="IOLD PDCT 1O info" Value="IO-Link Wireless Device with 1 O + PQI. Use a PDCT tool to set up the IO-Link port configuration"/>
+
+          <!-- Generic input/output data -->
+          <Text TextId="Input_Data_32" Value="Input data 32 Bytes" />
+          <Text TextId="Output_Data_32" Value="Output data 32 Bytes" />
+          <Text TextId="Input_Data_16" Value="Input data 16 Bytes"/>
+          <Text TextId="Output_Data_16" Value="Output data 16 Bytes"/>
+          <Text TextId="Input_Data_8" Value="Input data 8 Bytes"/>
+          <Text TextId="Output_Data_8" Value="Output data 8 Bytes"/>
+          <Text TextId="Input_Data_4" Value="Input data 4 Bytes"/>
+          <Text TextId="Output_Data_4" Value="Output data 4 Bytes"/>
+          <Text TextId="Input_Data_2" Value="Input data 2 Bytes"/>
+          <Text TextId="Output_Data_2" Value="Output data 2 Bytes"/>
+          <Text TextId="Input_Data_1" Value="Input data 1 Byte"/>
+          <Text TextId="Output_Data_1" Value="Output data 1 Byte"/>
+
+          <!-- Port Status (input data) -->
+          <Text TextId="PQI" Value="Port Qualifier information" />
+          <Text TextId="PQ" Value="PQ" />
+          <Text TextId="SV" Value="SubstDev" />
+          <Text TextId="DE" Value="DevErr" />
+          <Text TextId="DA" Value="PortActive" />
+          <Text TextId="DC" Value="DevCom" />
+          <Text TextId="NP" Value="NewPar" />
+
+          <!-- Generic port parameters -->
+          <Text TextId="Port parameters" Value="IO-Link Port parameters"/>
+          <Text TextId="Enable" Value="Enable"/>
+          <Text TextId="Disable" Value="Disable"/>
+          <!-- Enable/disable process diagnosis -->
+          <Text TextId="Diagnostic" Value="Enable Port diagnosis"/>
+          <!-- Enable/disable process alarm -->
+          <Text TextId="Notification" Value="Enable Process Alarm"/>
+          <!-- Enable/disable input fraction -->
+          <Text TextId="InputFraction" Value="Enable Input fraction"/>
+          <!-- Enable/disable pull/plug -->
+          <Text TextId="PullPlug" Value="Enable Pull/Plug"/>
+          <!-- Configuration source -->
+          <Text TextId="ConfigSource" Value="Configuration Source"/>
+          <Text TextId="ConfigSource_PDCT" Value="PDCT"/>
+          <Text TextId="ConfigSource_PNIO" Value="PNIO"/>
+
+          <!-- *********************************************************************************** -->
+          <!--                               IO-Link diagnosis                                     -->
+          <!-- *********************************************************************************** -->
+          <Text TextId="Master_Diag" Value="Master/Port diagnosis"/>
+          <Text TextId="Master_Diag_IO_Mismatch_Name" Value="Process Data mismatch"/>
+          <Text TextId="Master_Diag_IO_Mismatch_Help" Value="check submodule configuration"/>
+          <Text TextId="Master_Diag_No_Device_Name" Value="No Device / communication lost"/>
+          <Text TextId="Master_Diag_No_Device_Help" Value="check IO-Link port"/>
+          <Text TextId="Master_Diag_Startup_Param_Name" Value="Startup parametrization error"/>
+          <Text TextId="Master_Diag_Startup_Param_Help" Value="check parameter"/>
+          <Text TextId="Master_Diag_VendorID_Mismatch_Name" Value="Incorrect VendorID (Inspection Level mismatch)"/>
+          <Text TextId="Master_Diag_VendorID_Mismatch_Help" Value="check port configuration parameters"/>
+          <Text TextId="Master_Diag_DeviceID_Mismatch_Name" Value="Incorrect DeviceID (Inspection Level mismatch)"/>
+          <Text TextId="Master_Diag_DeviceID_Mismatch_Help" Value="check port configuration parameters"/>
+          <Text TextId="Master_Diag_EventOverflow_Name" Value="Device Event overflow"/>
+          <Text TextId="Master_Diag_EventOverflow_Help" Value="contact device manufacturer"/>
+          <Text TextId="Master_Diag_DS_Memory_Name" Value="Backup inconsistency"/>
+          <Text TextId="Master_Diag_DS_Memory_Help" Value="memory out of range (2048 octets)"/>
+          <Text TextId="Master_Diag_DS_Identity_Name" Value="Backup inconsistency"/>
+          <Text TextId="Master_Diag_DS_Identity_Help" Value="identity fault"/>
+          <Text TextId="Master_Diag_DS_Unspecific_Name" Value="Backup inconsistency"/>
+          <Text TextId="Master_Diag_DS_Unspecific_Help" Value="data storage unspecific error"/>
+          <Text TextId="Master_Diag_DS_Upload_Name" Value="Backup inconsistency"/>
+          <Text TextId="Master_Diag_DS_Upload_Help" Value="upload fault"/>
+          <Text TextId="Master_Diag_DS_Download_Name" Value="Parameter inconsistency"/>
+          <Text TextId="Master_Diag_DS_Download_Help" Value="download fault"/>
+          <Text TextId="Master_Diag_CycleTime_Name" Value="Invalid cycle time"/>
+          <Text TextId="Master_Diag_CycleTime_Help" Value="check port configuration parameters"/>
+          <Text TextId="Master_Diag_Revision_Name" Value="Revision fault (incompatible protocol version)"/>
+          <Text TextId="Master_Diag_Revision_Help" Value="check port configuration parameters"/>
+          <Text TextId="Master_Diag_ISDU_Name" Value="ISDU batch failed"/>
+          <Text TextId="Master_Diag_ISDU_Help" Value="parameter inconsistency?"/>
+          <Text TextId="Device_Diag" Value="Device diagnosis"/>
+          <Text TextId="Device_Diag_General_Malfunction_Name" Value="General malfunction"/>
+          <Text TextId="Device_Diag_General_Malfunction_Help" Value="unknown error"/>
+          <Text TextId="Device_Diag_Temperature_Fault_Name" Value="Temperature fault"/>
+          <Text TextId="Device_Diag_Temperature_Fault_Help" Value="overload"/>
+          <Text TextId="Device_Diag_Temperature_Overrun_Name" Value="Device temperature overrun"/>
+          <Text TextId="Device_Diag_Temperature_Overrun_Help" Value="clear source of heat"/>
+          <Text TextId="Device_Diag_Temperature_Underrun_Name" Value="Device temperature underrun"/>
+          <Text TextId="Device_Diag_Temperature_Underrun_Help" Value="insulate device"/>
+          <Text TextId="Device_Diag_Device_Hw_Fault_Name" Value="Device hardware fault"/>
+          <Text TextId="Device_Diag_Device_Hw_Fault_Help" Value="device exchange"/>
+          <Text TextId="Device_Diag_Component_Malfunction_Name" Value="Component malfunction"/>
+          <Text TextId="Device_Diag_Component_Malfunction_Help" Value="repair or exchange"/>
+          <Text TextId="Device_Diag_Non_Volatile_Memory_Loss_Name" Value="Non volatile memory loss"/>
+          <Text TextId="Device_Diag_Non_Volatile_Memory_Loss_Help" Value="check batteries"/>
+          <Text TextId="Device_Diag_Batteries_Low_Name" Value="Batteries low"/>
+          <Text TextId="Device_Diag_Batteries_Low_Help" Value="exchange batteries"/>
+          <Text TextId="Device_Diag_General_Power_Supply_Fault_Name" Value="General power supply fault"/>
+          <Text TextId="Device_Diag_General_Power_Supply_Fault_Help" Value="check availability"/>
+          <Text TextId="Device_Diag_Fuse_Blown_Name" Value="Fuse blown/open"/>
+          <Text TextId="Device_Diag_Fuse_Blown_Help" Value="exchange fuse"/>
+          <Text TextId="Device_Diag_Primary_Supply_Voltage_Overrun_Name" Value="Primary supply voltage overrun"/>
+          <Text TextId="Device_Diag_Primary_Supply_Voltage_Overrun_Help" Value="check tolerance"/>
+          <Text TextId="Device_Diag_Primary_Supply_Voltage_Underrun_Name" Value="Primary supply voltage underrun"/>
+          <Text TextId="Device_Diag_Primary_Supply_Voltage_Underrun_Help" Value="check tolerance"/>
+          <Text TextId="Device_Diag_Secondary_Supply_Voltage_Fault_Name" Value="Secondary supply voltage fault"/>
+          <Text TextId="Device_Diag_Secondary_Supply_Voltage_Fault_Help" Value="check tolerance"/>
+          <Text TextId="Device_Diag_Device_Sw_Fault_Name" Value="Device software fault"/>
+          <Text TextId="Device_Diag_Device_Sw_Fault_Help" Value="check firmware version"/>
+          <Text TextId="Device_Diag_Parameter_Error_Name" Value="Parameter error"/>
+          <Text TextId="Device_Diag_Parameter_Error_Help" Value="check data sheet and values"/>
+          <Text TextId="Device_Diag_Parameter_Missing_Name" Value="Parameter missing"/>
+          <Text TextId="Device_Diag_Parameter_Missing_Help" Value="check data sheet"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_Name" Value="Wire break of a subordinate device"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_Help" Value="check installation"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_1_Name" Value="Wire break of a subordinate device 1"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_2_Name" Value="Wire break of a subordinate device 2"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_3_Name" Value="Wire break of a subordinate device 3"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_4_Name" Value="Wire break of a subordinate device 4"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_5_Name" Value="Wire break of a subordinate device 5"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_6_Name" Value="Wire break of a subordinate device 6"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_7_Name" Value="Wire break of a subordinate device 7"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_8_Name" Value="Wire break of a subordinate device 8"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_9_Name" Value="Wire break of a subordinate device 9"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_10_Name" Value="Wire break of a subordinate device 10"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_11_Name" Value="Wire break of a subordinate device 11"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_12_Name" Value="Wire break of a subordinate device 12"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_13_Name" Value="Wire break of a subordinate device 13"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_14_Name" Value="Wire break of a subordinate device 14"/>
+          <Text TextId="Device_Diag_Wire_Break_Subordinate_Device_15_Name" Value="Wire break of a subordinate device 15"/>
+          <Text TextId="Device_Diag_Short_Circuit_Name" Value="Short circuit"/>
+          <Text TextId="Device_Diag_Short_Circuit_Help" Value="check installation"/>
+          <Text TextId="Device_Diag_Ground_Fault_Name" Value="Ground fault"/>
+          <Text TextId="Device_Diag_Ground_Fault_Help" Value="check installation"/>
+          <Text TextId="Device_Diag_Technology_Specific_Application_Fault_Name" Value="Technology specific application fault"/>
+          <Text TextId="Device_Diag_Technology_Specific_Application_Fault_Help" Value="reset device"/>
+          <Text TextId="Device_Diag_Simulation_Active_Name" Value="Simulation active"/>
+          <Text TextId="Device_Diag_Simulation_Active_Help" Value="check operational mode"/>
+          <Text TextId="Device_Diag_Process_Variable_Range_Overrun_Name" Value="Process variable range overrun"/>
+          <Text TextId="Device_Diag_Process_Variable_Range_Overrun_Help" Value="process data uncertain"/>
+          <Text TextId="Device_Diag_Measurement_Range_Exceeded_Name" Value="Measurement range exceeded"/>
+          <Text TextId="Device_Diag_Measurement_Range_Exceeded_Help" Value="check application"/>
+          <Text TextId="Device_Diag_Process_Variable_Range_Underrun_Name" Value="Process variable range underrun"/>
+          <Text TextId="Device_Diag_Process_Variable_Range_Underrun_Help" Value="process data uncertain"/>
+          <Text TextId="Device_Diag_Maintenance_Required_Name" Value="Maintenance required"/>
+          <Text TextId="Device_Diag_Maintenance_Required_Cleaning_Help" Value="cleaning"/>
+          <Text TextId="Device_Diag_Maintenance_Required_Refill_Help" Value="refill"/>
+          <Text TextId="Device_Diag_Maintenance_Required_Exchange_Parts_Help" Value="exchange wear and tear parts"/>
+
+        </PrimaryLanguage>
+
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
+
